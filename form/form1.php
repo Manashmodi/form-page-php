@@ -11,7 +11,7 @@ if (isset($_POST['submit'])) {
 
     move_uploaded_file($tmp_name, "./upload/$image");
 
-    $sql = "INSERT INTO `5` (`name`, `address`, `email`, `mobile`, `image`) VALUES ('$name','$address','$email','$mobile','$image')";
+    $sql = "INSERT INTO `users` (`name`, `address`, `email`, `mobile`, `image`) VALUES ('$name','$address','$email','$mobile','$image')";
 
     $result = mysqli_query($conn, $sql);
 
@@ -100,7 +100,7 @@ input[type="submit"]:hover {
 
     <h2>Submit Form</h2>
 
-    <form id="myform" action="x.php" method="POST" enctype="multipart/form-data">
+    <form id="myform" action="" method="POST" enctype="multipart/form-data">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required minlength="5" maxlength="10">
         <span class="error" id="nameError"></span>
